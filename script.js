@@ -1,10 +1,11 @@
 
 const div=document.createElement("div");
 
-div.innerHTML=`<table id="center"   >
+div.innerHTML=`<table id="center">
 <tr>
-   <td   colspan="3"><input value="0" id="input" type="text"></td> 
-<td><button onclick="clear()">C</button></td>
+   <td   colspan="3">
+   <input value="0" id="input" type="text"></td> 
+<td><button id="cBtn" onclick="clear()">C</button></td>
 </tr>
 <tr> 
     
@@ -32,7 +33,10 @@ div.innerHTML=`<table id="center"   >
 
 document.body.appendChild(div)
 
+let value=document.getElementById("input").value
 
+let cancelBtn=document.getElementById("cBtn")
+cancelBtn.addEventListener("click",()=>clear())
 function disc(x){
 if(document.getElementById("input").value==0){
     document.getElementById("input").value="";
